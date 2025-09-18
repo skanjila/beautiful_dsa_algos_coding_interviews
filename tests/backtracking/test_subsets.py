@@ -1,5 +1,5 @@
 # --- Run the user's three tests against the fixed function ---
-from dsa_practice.backtracking.subsets import subsets_fixed
+from beautiful_dsa_algos_coding_interviews.backtracking.subsets import subsets_fixed
 
 
 def canon(lst):

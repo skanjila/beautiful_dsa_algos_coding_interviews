@@ -2,7 +2,7 @@ import pytest
 
 # If the function lives in another module, change the import accordingly, e.g.:
 # from your_module import can_finish_kahn
-from dsa_practice.graphs.can_finish import can_finish_kahn  # <-- update this to your module name
+from beautiful_dsa_algos_coding_interviews.graphs.can_finish import can_finish_kahn  # <-- update this to your module name
 
 
 @pytest.mark.parametrize(

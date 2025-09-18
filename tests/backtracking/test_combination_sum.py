@@ -1,4 +1,4 @@
-from dsa_practice.backtracking.combination_sum import combination_sum
+from beautiful_dsa_algos_coding_interviews.backtracking.combination_sum import combination_sum
 
 def test_basic_combination_sum_happy_path_one():
     target = 6

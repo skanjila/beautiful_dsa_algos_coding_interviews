@@ -1,5 +1,5 @@
 import pytest
-from dsa_practice.binary_search.median_of_two_sorted_arrays import median_two_sorted_merge
+from beautiful_dsa_algos_coding_interviews.binary_search.median_of_two_sorted_arrays import median_two_sorted_merge
 
 @pytest.mark.parametrize(
     "a,b,expected",

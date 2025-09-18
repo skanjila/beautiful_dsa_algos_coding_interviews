@@ -1,5 +1,5 @@
 import pytest
-from dsa_practice.sliding_window.length_of_longest_substring import length_of_longest_substring
+from beautiful_dsa_algos_coding_interviews.sliding_window.length_of_longest_substring import length_of_longest_substring
 
 @pytest.mark.parametrize(
     "s, expected",
