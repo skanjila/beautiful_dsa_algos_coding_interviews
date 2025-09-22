@@ -1,27 +1,31 @@
-# anti_diagonals.py
-
 from typing import List
 
-def get_matrices_antidiagonals(matrix: List[List[int]]):
+def rotate_image(matrix: List[List[int]]) -> None:
     """
-    Return the anti-diagonals of a 2D matrix (row+col is constant along each anti-diagonal).
-
-    Raises:
-        IndexError: if the matrix is empty ([]) or first row has no columns ([[]]).
+    Rotate an n×n matrix 90° clockwise in place.
+    - Returns None (in-place)
+    - Raises ValueError for non-square or ragged inputs
+    - Treats [] as a no-op (returns None)
     """
-    # Robust empty checks that work for lists and list-like objects.
-    try:
-        if len(matrix) == 0 or len(matrix[0]) == 0:
-            raise IndexError("Empty matrix")
-    except (TypeError, IndexError):  # e.g., matrix is not subscriptable or matrix[0] missing
-        raise IndexError("Empty matrix")
+    # Empty matrix: allow as no-op (adjust if your spec requires raising)
+    if matrix == []:
+        return None
 
-    rows = len(matrix)
-    cols = len(matrix[0])
-    antidiagonals = [[] for _ in range(rows + cols - 1)]
+    # Validate: list of lists, square, no ragged rows
+    if not isinstance(matrix, list) or any(not isinstance(r, list) for r in matrix):
+        raise ValueError("Matrix must be a list of lists.")
 
-    for i in range(rows):
-        for j in range(cols):
-            antidiagonals[i + j].append(matrix[i][j])
+    n = len(matrix)
+    if any(len(r) != n for r in matrix):
+        raise ValueError("Matrix must be square (n x n) with equal row lengths.")
 
-    return antidiagonals
+    # Transpose in place (skip diagonal to avoid redundant swaps)
+    for i in range(n):
+        for j in range(i + 1, n):
+            matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+
+    # Reverse each row in place
+    for row in matrix:
+        row.reverse()
+
+    return None
