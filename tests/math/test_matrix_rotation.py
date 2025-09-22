@@ -1,6 +1,6 @@
-import pytest
+import pytest # update import path
 
-from beautiful_dsa_algos_coding_interviews.math.matrix_antidiagonals import get_antidiagonals
+from beautiful_dsa_algos_coding_interviews.math.matrix_rotation import get_matrices_antidiagonals
 
 
 def test_square_matrix_3x3():
@@ -16,7 +16,7 @@ def test_square_matrix_3x3():
         [6, 8],
         [9]
     ]
-    assert get_antidiagonals(matrix) == expected
+    assert get_matrices_antidiagonals(matrix) == expected
 
 
 def test_rectangular_matrix_2x3():
@@ -30,7 +30,7 @@ def test_rectangular_matrix_2x3():
         [3, 5],
         [6]
     ]
-    assert get_antidiagonals(matrix) == expected
+    assert get_matrices_antidiagonals(matrix) == expected
 
 
 def test_rectangular_matrix_3x2():
@@ -45,7 +45,7 @@ def test_rectangular_matrix_3x2():
         [4, 5],
         [6]
     ]
-    assert get_antidiagonals(matrix) == expected
+    assert get_matrices_antidiagonals(matrix) == expected
 
 
 def test_single_row():
@@ -56,7 +56,7 @@ def test_single_row():
         [30],
         [40]
     ]
-    assert get_antidiagonals(matrix) == expected
+    assert get_matrices_antidiagonals(matrix) == expected
 
 
 def test_single_column():
@@ -72,13 +72,13 @@ def test_single_column():
         [3],
         [4]
     ]
-    assert get_antidiagonals(matrix) == expected
+    assert get_matrices_antidiagonals(matrix) == expected
 
 
 def test_one_element():
     matrix = [[42]]
     expected = [[42]]
-    assert get_antidiagonals(matrix) == expected
+    assert get_matrices_antidiagonals(matrix) == expected
 
 
 def test_non_square_large():
@@ -93,5 +93,9 @@ def test_non_square_large():
         [4, 7],
         [8]
     ]
-    assert get_antidiagonals(matrix) == expected
+    assert get_matrices_antidiagonals(matrix) == expected
 
+
+def test_empty_matrix_raises():
+    with pytest.raises(IndexError):
+        get_matrices_antidiagonals([])
