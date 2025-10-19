@@ -43,7 +43,7 @@ from beautiful_dsa_algos_coding_interviews.graphs.connected_components import fi
 )
 def test_find_circle_num_parametrized(matrix, expected):
     # function signature includes `self`, so pass None
-    assert findConnectedComponents(None, matrix) == expected
+    assert findConnectedComponents(matrix) == expected
 
 
 def test_large_two_block_components():
@@ -70,7 +70,7 @@ def test_large_two_block_components():
         for j in range(a, n):
             mat[i][j] = 1
 
-    assert findConnectedComponents(None, mat) == 2
+    assert findConnectedComponents(mat) == 2
 
 
 def test_single_island_inside_sparse_graph():
@@ -91,4 +91,4 @@ def test_single_island_inside_sparse_graph():
             else:
                 mat[i][j] = 1
     # leave others as zeros (isolated)
-    assert findConnectedComponents(None, mat) == 6
+    assert findConnectedComponents(mat) == 6
