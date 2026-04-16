@@ -68,7 +68,7 @@ These are structured interview-prep directories at the repo root:
 - [docs/section_index.md](/Users/skanjilal/employment/code/beautiful_dsa_algos_coding_interviews/docs/section_index.md)
 - [docs/study_guide_roadmap.md](/Users/skanjilal/employment/code/beautiful_dsa_algos_coding_interviews/docs/study_guide_roadmap.md)
 - [docs/how_to_read_big_o.md](/Users/skanjilal/employment/code/beautiful_dsa_algos_coding_interviews/docs/how_to_read_big_o.md)
-- [docs/how_to_use_this_repo_effectively.md](/Users/skanjilal/employment/code/beautiful_dsa_algos_coding_interviews/docs/how_to_use_this_repo_effectively.md)
+- [docs/interview_prep_master_guide.md](/Users/skanjilal/employment/code/beautiful_dsa_algos_coding_interviews/docs/interview_prep_master_guide.md)
 
 ## How To Run The Tests
 
@@ -157,9 +157,9 @@ If you want the high-level map of the repo and its intentional variants, use:
 - [docs/section_index.md](/Users/skanjilal/employment/code/beautiful_dsa_algos_coding_interviews/docs/section_index.md)
 
 If you want a practical guide for daily use, staying consistent, and avoiding
-burnout, use:
+burnout across DSA, system design, MLE, data science, and data engineering, use:
 
-- [docs/how_to_use_this_repo_effectively.md](/Users/skanjilal/employment/code/beautiful_dsa_algos_coding_interviews/docs/how_to_use_this_repo_effectively.md)
+- [docs/interview_prep_master_guide.md](/Users/skanjilal/employment/code/beautiful_dsa_algos_coding_interviews/docs/interview_prep_master_guide.md)
 
 ### For system design prep
 
