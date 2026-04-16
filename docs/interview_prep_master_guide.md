@@ -435,6 +435,8 @@ Use:
 - `docs/service_design.md`
 - `docs/spring_service_design.md`
 - `docs/fastapi_service_design.md`
+- `docs/rest_best_practices.md`
+- `docs/grpc_best_practices.md`
 
 Best workflow:
 
