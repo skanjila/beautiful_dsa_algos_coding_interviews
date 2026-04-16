@@ -1,3 +1,12 @@
+from .practical_question_bank import PRACTICAL_QUESTION_BANK as PRACTICAL_QUESTION_BANK
+from .practical_question_bank import (
+    filter_by_category as filter_practical_by_category,
+    filter_by_difficulty as filter_practical_by_difficulty,
+    get_question_by_slug as get_practical_question_by_slug,
+    list_categories as list_practical_categories,
+    render_markdown_study_guide as render_practical_markdown_study_guide,
+    search_questions as search_practical_questions,
+)
 from .question_bank import (
     QUESTION_BANK,
     QuestionAnswer,
@@ -8,14 +17,49 @@ from .question_bank import (
     render_markdown_study_guide,
     search_questions,
 )
+from .solutions import (
+    LogisticRegressionGD,
+    NaiveBayesTextClassifier,
+    accuracy_score,
+    add_rolling_user_features,
+    build_preprocessing_plan,
+    infer_feature_types,
+    permutation_feature_importance,
+    precision_recall,
+    preprocess_rows,
+    time_series_splits,
+    train_baseline_classifier,
+    train_class_imbalanced_classifier,
+    train_text_baseline,
+)
 
 __all__ = [
+    "PRACTICAL_QUESTION_BANK",
     "QUESTION_BANK",
     "QuestionAnswer",
+    "LogisticRegressionGD",
+    "NaiveBayesTextClassifier",
+    "accuracy_score",
+    "add_rolling_user_features",
+    "build_preprocessing_plan",
     "filter_by_category",
     "filter_by_difficulty",
+    "filter_practical_by_category",
+    "filter_practical_by_difficulty",
     "get_question_by_slug",
+    "get_practical_question_by_slug",
+    "infer_feature_types",
     "list_categories",
+    "list_practical_categories",
+    "permutation_feature_importance",
+    "precision_recall",
+    "preprocess_rows",
+    "render_practical_markdown_study_guide",
     "render_markdown_study_guide",
+    "search_practical_questions",
     "search_questions",
+    "time_series_splits",
+    "train_baseline_classifier",
+    "train_class_imbalanced_classifier",
+    "train_text_baseline",
 ]
