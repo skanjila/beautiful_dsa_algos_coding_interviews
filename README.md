@@ -69,6 +69,8 @@ These are structured interview-prep directories at the repo root:
 - [docs/study_guide_roadmap.md](/Users/skanjilal/employment/code/beautiful_dsa_algos_coding_interviews/docs/study_guide_roadmap.md)
 - [docs/how_to_read_big_o.md](/Users/skanjilal/employment/code/beautiful_dsa_algos_coding_interviews/docs/how_to_read_big_o.md)
 - [docs/interview_prep_master_guide.md](/Users/skanjilal/employment/code/beautiful_dsa_algos_coding_interviews/docs/interview_prep_master_guide.md)
+- [docs/rest_best_practices.md](/Users/skanjilal/employment/code/beautiful_dsa_algos_coding_interviews/docs/rest_best_practices.md)
+- [docs/grpc_best_practices.md](/Users/skanjilal/employment/code/beautiful_dsa_algos_coding_interviews/docs/grpc_best_practices.md)
 
 ## How To Run The Tests
 
@@ -160,6 +162,8 @@ If you want a practical guide for daily use, staying consistent, and avoiding
 burnout across DSA, system design, MLE, data science, and data engineering, use:
 
 - [docs/interview_prep_master_guide.md](/Users/skanjilal/employment/code/beautiful_dsa_algos_coding_interviews/docs/interview_prep_master_guide.md)
+- [docs/rest_best_practices.md](/Users/skanjilal/employment/code/beautiful_dsa_algos_coding_interviews/docs/rest_best_practices.md)
+- [docs/grpc_best_practices.md](/Users/skanjilal/employment/code/beautiful_dsa_algos_coding_interviews/docs/grpc_best_practices.md)
 
 ### For system design prep
 
