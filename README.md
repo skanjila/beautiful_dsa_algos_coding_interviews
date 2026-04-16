@@ -71,6 +71,7 @@ These are structured interview-prep directories at the repo root:
 - [docs/interview_prep_master_guide.md](/Users/skanjilal/employment/code/beautiful_dsa_algos_coding_interviews/docs/interview_prep_master_guide.md)
 - [docs/rest_best_practices.md](/Users/skanjilal/employment/code/beautiful_dsa_algos_coding_interviews/docs/rest_best_practices.md)
 - [docs/grpc_best_practices.md](/Users/skanjilal/employment/code/beautiful_dsa_algos_coding_interviews/docs/grpc_best_practices.md)
+- [system_design/rate_limiting_and_event_bus.md](/Users/skanjilal/employment/code/beautiful_dsa_algos_coding_interviews/system_design/rate_limiting_and_event_bus.md)
 
 ## How To Run The Tests
 
@@ -164,6 +165,7 @@ burnout across DSA, system design, MLE, data science, and data engineering, use:
 - [docs/interview_prep_master_guide.md](/Users/skanjilal/employment/code/beautiful_dsa_algos_coding_interviews/docs/interview_prep_master_guide.md)
 - [docs/rest_best_practices.md](/Users/skanjilal/employment/code/beautiful_dsa_algos_coding_interviews/docs/rest_best_practices.md)
 - [docs/grpc_best_practices.md](/Users/skanjilal/employment/code/beautiful_dsa_algos_coding_interviews/docs/grpc_best_practices.md)
+- [system_design/rate_limiting_and_event_bus.md](/Users/skanjilal/employment/code/beautiful_dsa_algos_coding_interviews/system_design/rate_limiting_and_event_bus.md)
 
 ### For system design prep
 
