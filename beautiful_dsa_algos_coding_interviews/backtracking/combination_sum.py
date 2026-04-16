@@ -1,36 +1,40 @@
 from typing import List
 
 
-def combination_sum(candidates: List[int], target: int)-> List[List[int]]:
-    """This function implements the combination sum algorithm by using backtracking.
-    @param candidates: A list of candidate numbers.
-    @param target: The target sum.
-    @return: A list of all possible combinations."""
+def combination_sum(candidates: List[int], target: int) -> List[List[int]]:
+    """
+    Return all combinations whose numbers add to ``target``.
 
-    candidates.sort()
+    This is the classic interview variant where each candidate may be reused
+    any number of times. Sorting lets us prune once a candidate exceeds the
+    remaining sum.
 
-    # define a result to store the combination sum
+    Time complexity: Exponential in the search tree; commonly described as
+    O(N^(T / M)) in the worst case, where N is the number of candidates,
+    T is the target, and M is the smallest candidate.
+    Space complexity: O(T / M) for the recursion path, excluding output.
+    """
+
+    sorted_candidates = sorted(set(candidates))
     results: List[List[int]] = []
 
-    def backtrack(remaining_sum: int, comb_candidates: List[int], start_index: int) -> None:
-        """A function that implements the backtracking algorithm that backtracks
-        with the different combination of numbers adding up to the
-        remaining sum."""
+    def backtrack(start_index: int, remaining_sum: int, path: List[int]) -> None:
         if remaining_sum == 0:
-            results.append(comb_candidates.copy())
-            return
-        elif remaining_sum < 0:
+            results.append(path.copy())
             return
 
-        for i in range(start_index, len(candidates)):
-            if i > start_index and candidates[i] == candidates[i - 1]:
-                continue
-            if candidates[i] > remaining_sum:
+        for index in range(start_index, len(sorted_candidates)):
+            candidate = sorted_candidates[index]
+            if candidate > remaining_sum:
                 break
-            comb_candidates.append(candidates[i])
-            backtrack(remaining_sum - candidates[i], comb_candidates, i+1)
-            comb_candidates.pop()
 
-    backtrack(target, [], 0)
+            path.append(candidate)
+            # Reuse is allowed, so stay on the same index instead of advancing.
+            backtrack(index, remaining_sum - candidate, path)
+            path.pop()
 
+    if target < 0:
+        return []
+
+    backtrack(0, target, [])
     return results

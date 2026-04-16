@@ -30,6 +30,11 @@ Strategy:
 """
 
 def findConnectedComponents(isConnected: List[List[int]]) -> int:
+    """Count connected components in an adjacency matrix graph.
+
+    Time complexity: O(N^2) because every matrix position may be inspected.
+    Space complexity: O(N) for the visited array and DFS stack.
+    """
     # Number of nodes (cities / vertices)
     visited_length = len(isConnected)
 
@@ -58,6 +63,9 @@ def dfs_helper(start_index: int, visited: List[bool], isConnected: List[List[int
     starting from the node `start_index`.
 
     Marks all nodes reachable from `start_index` as visited.
+
+    Time complexity: O(N) for one call because it scans a full matrix row.
+    Space complexity: O(N) recursion depth in the worst case.
     """
     # Mark this node as visited so we don’t revisit it again.
     visited[start_index] = True

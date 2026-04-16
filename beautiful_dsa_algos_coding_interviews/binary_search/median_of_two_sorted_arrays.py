@@ -1,5 +1,6 @@
 from typing import List
 
+
 def median_two_sorted_merge(first_array: List[int], second_array: List[int]) -> float:
     """
     Finds the median of two sorted arrays by merging them.
@@ -8,6 +9,9 @@ def median_two_sorted_merge(first_array: List[int], second_array: List[int]) -> 
         second_array: The second sorted list of integers.
     Returns:
         The median of the two sorted arrays as a float.
+
+    Time complexity: O(M + N) because both arrays are merged once.
+    Space complexity: O(M + N) for the merged array.
     """
 
     if not first_array and not second_array:
@@ -20,8 +24,9 @@ def median_two_sorted_merge(first_array: List[int], second_array: List[int]) -> 
 
     merged_array = []
 
-    # while the counters of the first and second arrays have not reached the lengths
-    # of both arrays either merge the current element into the first or the second array
+    # Standard merge-step from merge sort: whichever current element is smaller
+    # must appear next in the final sorted order, so we append it and advance
+    # only that array's pointer.
     while fist_array_counter < length_first_array and second_array_counter < length_second_array:
         if first_array[fist_array_counter] <= second_array[second_array_counter]:
             merged_array.append(first_array[fist_array_counter])
@@ -29,15 +34,17 @@ def median_two_sorted_merge(first_array: List[int], second_array: List[int]) -> 
         else:
             merged_array.append(second_array[second_array_counter])
             second_array_counter += 1
-    # merge in the rest of the elements for both arrays
+
+    # At most one array still has remaining elements here. Because those leftovers
+    # are already sorted and larger than everything we merged before, they can be
+    # appended directly without further comparisons.
     merged_array.extend(first_array[fist_array_counter:])
     merged_array.extend(second_array[second_array_counter:])
 
-    # retrieve the length of the newly merged array
     length_of_merged_array = len(merged_array)
 
-    # now calculate the median based on whether the length
-    # of the merged array is odd or even
+    # For odd length, the median is the single middle element.
+    # For even length, it is the average of the two middle elements.
     mid = length_of_merged_array // 2
     if length_of_merged_array % 2 == 1:
         return float(merged_array[mid])

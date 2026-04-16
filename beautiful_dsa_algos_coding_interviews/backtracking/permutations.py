@@ -9,6 +9,11 @@ def compute_permutations(nums: List[int]) -> List[List[int]]:
 
     Returns:
         List[List[int]]: A list containing all possible permutations of the input list.
+
+    Time complexity: O(N * N!) because there are N! permutations and copying
+    each finished path costs O(N).
+    Space complexity: O(N) for recursion depth plus the ``used`` array,
+    excluding output.
     """
     results = []        # Stores all the final permutations
     used = [False] * len(nums)  # Tracks which elements are already in the current path

@@ -7,7 +7,11 @@ def can_finish_kahn(numCourses: int, prerequisites: List[List[int]]) -> bool:
     an individual ro finish the courses
     @param numCourses: number of courses
     @param prerequisites: list of prerequisites
-    @return: True if there is a cycle, False otherwise"""
+    @return: True if there is a cycle, False otherwise
+
+    Time complexity: O(V + E)
+    Space complexity: O(V + E)
+    """
     finished_courses = 0
 
     graph_of_finished_courses: List[List[int]] = [[] for _ in range(numCourses)]
@@ -30,4 +34,3 @@ def can_finish_kahn(numCourses: int, prerequisites: List[List[int]]) -> bool:
                 queue_of_courses.append(neighboring_course)
 
     return finished_courses == numCourses
-

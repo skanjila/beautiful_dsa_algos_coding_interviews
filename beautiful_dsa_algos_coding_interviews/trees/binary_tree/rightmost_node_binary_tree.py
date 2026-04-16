@@ -6,6 +6,11 @@ from beautiful_dsa_algos_coding_interviews.trees.binary_tree.tree_node import Tr
 
 
 def rightmost_node_binary_tree(root: TreeNode) -> TreeNode:
+    """Return the rightmost visible value at each tree level.
+
+    Time complexity: O(N)
+    Space complexity: O(W), where W is the maximum width.
+    """
     if not root:
         return None
     results = []

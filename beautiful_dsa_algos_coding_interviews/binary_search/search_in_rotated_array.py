@@ -1,5 +1,6 @@
 from typing import List
 
+
 def search_rotated(nums: List[int], target: int) -> int:
     """
     Search for a target value in a rotated sorted array using binary search.
@@ -21,41 +22,33 @@ def search_rotated(nums: List[int], target: int) -> int:
     Space complexity: O(1)
     """
 
-    # Initialize two pointers to define the current search range.
     left, right = 0, len(nums) - 1
 
-    # Continue searching as long as the search range is valid.
+    # Each iteration discards half of the remaining range. The key twist is
+    # that, in a rotated sorted array with distinct values, at least one side
+    # of ``mid`` must still be normally sorted.
     while left <= right:
-        # Find the middle index of the current range.
         mid = (left + right) // 2
 
-        # 🎯 Case 1: Found the target — return its index.
         if nums[mid] == target:
             return mid
 
-        # ⚙️ Case 2: Determine which half of the array is sorted.
-        # Remember, one of the halves (left or right) is guaranteed to be sorted.
-
-        # If the LEFT half is sorted (i.e., nums[left] <= nums[mid]),
-        # that means the rotation pivot is NOT in this segment.
+        # If the left endpoint is <= the middle value, the left half is in
+        # sorted order and the rotation point, if any, must be on the right.
         if nums[left] <= nums[mid]:
-            # Check whether the target lies within this sorted left half.
-            if nums[left] <= target <= nums[mid]:
-                # If target is within this range, discard the right half.
+            # Use strict ``< nums[mid]`` on the upper bound because equality was
+            # already handled by the early return above.
+            if nums[left] <= target < nums[mid]:
                 right = mid - 1
             else:
-                # Otherwise, search in the right half.
                 left = mid + 1
 
-        # Otherwise, the RIGHT half must be sorted.
         else:
-            # Check whether the target lies within this sorted right half.
-            if nums[mid] <= target <= nums[right]:
-                # If yes, move left pointer to narrow search to the right half.
+            # Symmetric case: the right half is normally sorted, so the decision
+            # is based on whether the target falls inside that ordered interval.
+            if nums[mid] < target <= nums[right]:
                 left = mid + 1
             else:
-                # Otherwise, discard the right half and move to the left half.
                 right = mid - 1
 
-    # ❌ Target not found after searching all possible halves.
     return -1

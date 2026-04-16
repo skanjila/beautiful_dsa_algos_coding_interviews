@@ -1,6 +1,11 @@
 from typing import Dict
 
 def length_of_longest_substring(s: str) -> int:
+    """Return the longest substring with no repeated characters.
+
+    Time complexity: O(N)
+    Space complexity: O(min(N, alphabet_size))
+    """
     last_seen: Dict[str, int] = {}  # ✅ real dict instance
     start = 0
     best = 0

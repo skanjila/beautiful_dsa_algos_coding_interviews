@@ -4,7 +4,12 @@ from typing import List
 def generate_anagrams(input_str: str)->List[str]:
     """Given an input string generate all the possible anagrams
     @param input_str: input string
-    @return: list of all possible anagrams"""
+    @return: list of all possible anagrams
+
+    Time complexity: O(N * N!) because there are N! permutations and joining a
+    completed path costs O(N).
+    Space complexity: O(N) recursion depth, excluding output.
+    """
     anagrams = []
 
     if not input_str:
@@ -17,6 +22,11 @@ def generate_anagrams(input_str: str)->List[str]:
     results=[]
 
     def backtrack():
+        """Enumerate permutations of the sorted characters.
+
+        Time complexity: O(N!) across the full recursion tree.
+        Space complexity: O(N) for the current path and used flags.
+        """
         if len(path) == length_of_input_str:
             results.append("".join(path))
 
