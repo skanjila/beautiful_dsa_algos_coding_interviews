@@ -182,12 +182,95 @@ Suggested weekly cycle:
 5. 1 general system design round
 6. 1 review day for weak spots
 
+## Intensive Option: 2 To 3 Deep-Dive Days Per Week
+
+If your schedule works better with fewer but longer sessions, use 2 to 3
+focused days each week with 4 to 5 hour blocks.
+
+This is a good option when:
+
+- you work full time and need concentrated study blocks
+- you want deeper immersion instead of daily context switching
+- you can protect large chunks of time without interruption
+
+### Structure For A 4 To 5 Hour Deep-Dive Session
+
+#### Block 1: Pattern review, 45 to 60 minutes
+
+- read one `DEEP_DIVE.md`
+- summarize the recognition cues
+- list the invariants in your own words
+
+#### Block 2: First solve, 60 to 75 minutes
+
+- solve 1 to 2 problems from the same section
+- write the approach before coding
+- run tests
+
+#### Block 3: Short break, 15 to 20 minutes
+
+- step away completely
+- do not keep reading while resting
+
+#### Block 4: Second solve or rewrite, 60 to 75 minutes
+
+- re-implement one of the same problems from memory
+- or solve one harder neighboring problem in the same pattern family
+
+#### Block 5: Review and note-taking, 45 to 60 minutes
+
+- compare with repo implementations
+- read the comments and Big O derivations
+- write down repeated mistakes and weak spots
+
+### Good 3-Day Intensive Weekly Split
+
+#### Day 1: Core coding patterns
+
+- two pointers
+- sliding window
+- hashing
+- binary search
+
+#### Day 2: Recursion and structural problems
+
+- trees
+- DFS / BFS
+- graphs
+- backtracking
+
+#### Day 3: Interview systems and ML
+
+- system design
+- data engineering
+- data science
+- machine learning engineering
+
+### Good 2-Day Intensive Weekly Split
+
+#### Day 1
+
+- DSA only
+- 2 pattern families in depth
+
+#### Day 2
+
+- one structural / graph family
+- one system or ML family
+
+The main rule is:
+
+- one or two closely related families per long session
+- not six unrelated topics in the same day
+
 ## How To Avoid Getting Lost
 
 - Do not jump randomly between distant sections every day.
 - Use one primary section per session.
 - Keep a small handwritten or local note of mistakes you repeat.
 - Revisit solved problems after a few days, not immediately.
+- In long sessions, keep one main theme for the whole block so depth is not
+  lost to context switching.
 
 ## How To Know You Are Ready
 
