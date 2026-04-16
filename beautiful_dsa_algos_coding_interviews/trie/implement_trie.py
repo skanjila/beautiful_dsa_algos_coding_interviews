@@ -15,8 +15,10 @@ class Trie:
     """
     Prefix tree supporting insert, exact search, and prefix search.
 
-    Insert/search/starts_with all run in O(L) time where L is word length.
-    Space complexity: O(total characters stored across inserted words).
+    Insert/search/starts_with all run in O(L) time because each operation walks
+    one trie edge per character in the input word or prefix.
+    Space complexity: O(total characters stored across inserted words) because
+    new nodes are created only for characters that are not already present.
     """
 
     def __init__(self):

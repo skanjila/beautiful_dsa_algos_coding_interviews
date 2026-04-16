@@ -35,6 +35,9 @@ node is the LRU entry.
 
 ### Big O
 
-- `get`: `O(1)` amortized
-- `put`: `O(1)` amortized
-- space: `O(capacity)`
+- `get`: `O(1)` amortized because the dictionary finds the node directly and
+  the doubly linked list can detach and reattach that node with pointer updates.
+- `put`: `O(1)` amortized because inserts, updates, and evictions all reduce to
+  constant-time dictionary work plus constant-time list splices.
+- space: `O(capacity)` because the cache stores at most `capacity` keys and one
+  linked-list node per cached entry.

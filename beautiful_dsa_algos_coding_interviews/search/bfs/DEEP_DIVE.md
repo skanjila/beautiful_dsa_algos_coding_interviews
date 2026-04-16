@@ -30,8 +30,11 @@ That explanation is often half the battle in a graph interview.
 
 ### Big O
 
-- time: `O(M^2 * N)` in the common analysis
-- space: `O(N)`
+- time: `O(M^2 * N)` in the common analysis because for each of the `N` words
+  you may generate neighbors by trying `M` character positions, and building
+  each candidate string costs `O(M)`.
+- space: `O(N)` because the dictionary set, visited structure, and BFS queue can
+  all grow in proportion to the number of words.
 
 ## `edge_cases`
 

@@ -24,7 +24,9 @@ Uses a decreasing stack of indices.
 
 - When a warmer temperature appears, it resolves waiting colder days.
 - Pattern to use quickly: next greater element on indices.
-- Big O: `O(N)` time, `O(N)` space.
+- Big O: `O(N)` time because each index is pushed onto the stack once and
+  popped at most once, so the total number of stack actions is linear. Space is
+  `O(N)` in the worst case when the stack keeps many unresolved indices.
 
 ## `next_greater_element`
 
@@ -32,4 +34,6 @@ Returns the next greater value to the right for each position.
 
 - Same monotonic pattern, but stores the greater value directly instead of a distance.
 - Pattern to use quickly: classic next greater element.
-- Big O: `O(N)` time, `O(N)` space.
+- Big O: `O(N)` time for the same reason: every value enters the monotonic
+  stack once and can leave it once, which prevents the nested loop shape from
+  becoming quadratic. Space is `O(N)` for the stack and result mapping.

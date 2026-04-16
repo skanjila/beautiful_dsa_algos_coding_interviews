@@ -3,7 +3,8 @@ from beautiful_dsa_algos_coding_interviews.trees.binary_tree.invert_binary_tree_
 
 class LRUCache:
     """
-    LRU cache: O(1) amortized get/put using dict + doubly linked list.
+    LRU cache: O(1) amortized get/put because the dictionary finds nodes by key
+    directly and the doubly linked list updates recency with pointer rewiring.
     Uses TreeNode as a generic node and adds `.key`, `.val`, `.prev`, `.next`.
 
     Space complexity: O(capacity) because the cache stores at most ``capacity``

@@ -5,8 +5,10 @@ def number_of_islands(grid: List[List[str]]) -> int:
     """
     Count connected land components in a binary grid using DFS flood fill.
 
-    Time complexity: O(R * C)
-    Space complexity: O(R * C) in the worst case from recursion depth.
+    Time complexity: O(R * C) because each cell is visited at most once before
+    it is flipped from land to water.
+    Space complexity: O(R * C) in the worst case because one large island can
+    make the recursion stack as deep as the number of cells.
     """
 
     if not grid or not grid[0]:

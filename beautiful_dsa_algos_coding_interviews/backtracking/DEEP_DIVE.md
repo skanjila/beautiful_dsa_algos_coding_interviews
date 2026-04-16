@@ -36,8 +36,11 @@ Finds combinations that add to a target when candidates may be reused.
 - Interview pattern: combination generation with pruning by sorted order and
   remaining target.
 - Fast recognition cue: "find all combinations that add to a target".
-- Big O: exponential search tree, often described as `O(N^(T/M)))` in the worst
-  case; recursion depth `O(T/M)`.
+- Big O: exponential search tree. In plain English, the algorithm keeps trying
+  many candidate values at many recursion levels until the remaining target is
+  driven to zero or below. The exact formula is less important than the shape:
+  branching choices grow quickly, and the recursion depth is bounded by how
+  many times the smallest candidate can fit into the target.
 
 ## `combination_sum_ii`
 
@@ -48,7 +51,9 @@ Finds unique combinations when each candidate can be used at most once.
 - Duplicate control: skip equal values at the same tree depth.
 - Interview pattern: subset-style backtracking with duplicate skipping.
 - Fast recognition cue: "each number can be used once" plus possible duplicates.
-- Big O: `O(2^N)` worst-case search, `O(N)` recursion depth.
+- Big O: think "subset tree". Each element is effectively a choose-or-skip
+  decision, so the search can grow toward `2^N` branches in the worst case.
+  Recursion depth is `O(N)` because the path can include at most all elements.
 
 ## `generate_parentheses`
 
@@ -61,7 +66,10 @@ Generates all valid parentheses strings of length `2n`.
 - Interview pattern: build-valid-string DFS with invariant tracking.
 - Fast recognition cue: "generate all valid strings" where invalid prefixes can
   be ruled out immediately.
-- Big O: `O(C_n * n)` where `C_n` is the nth Catalan number; `O(n)` recursion depth.
+- Big O: the number of valid outputs is the main driver here. There are
+  Catalan-many valid strings, and each finished string has length `2n`, so the
+  work is roughly "number of valid strings times string length". Recursion
+  depth is `O(n)` because you place one parenthesis at a time.
 
 ## `letter_combinations_of_phone_number`
 
@@ -72,7 +80,10 @@ Builds the Cartesian product of letters mapped from digits.
 - Interview pattern: Cartesian-product DFS.
 - Fast recognition cue: independent choices at each position, no conflicts
   between choices.
-- Big O: between `O(3^n)` and `O(4^n)` depending on the digits; `O(n)` stack.
+- Big O: one recursion level per digit, with about 3 or 4 branches per level
+  depending on the keypad mapping. That means the total number of outputs grows
+  like "branching factor to the number of digits". Stack depth is linear in the
+  number of digits.
 
 ## `n_ary_tree_node`
 
@@ -91,7 +102,9 @@ Places queens row by row while preventing column and diagonal conflicts.
   global correctness for the partial board.
 - Interview pattern: placement backtracking with constraint sets.
 - Fast recognition cue: "place items on a board without conflicts".
-- Big O: `O(N!)` worst case, `O(N)` recursion depth.
+- Big O: the search explores permutations, so the number of full arrangements
+  grows factorially. Recursion depth is `O(N)` because one queen is placed per
+  row.
 
 ## `palindrome_partitioning`
 
@@ -102,7 +115,9 @@ Splits a string into substrings such that every substring is a palindrome.
   or combination problem.
 - Interview pattern: cut-the-string recursion.
 - Fast recognition cue: "split into all valid pieces" or "partition into valid substrings".
-- Big O: `O(N * 2^N)` worst case, `O(N)` recursion depth.
+- Big O: there can be exponentially many valid cut patterns, and each completed
+  partition may need up to linear work to copy or describe its substrings.
+  Recursion depth is `O(N)` because cuts move left to right through the string.
 
 ## `permutations`
 
@@ -122,7 +137,9 @@ Generates the power set with duplicate skipping.
 - Duplicate handling: after sorting, skip equal values at the same recursion depth.
 - Interview pattern: include/exclude or subset-tree enumeration.
 - Fast recognition cue: "all subsets", "power set", or "choose any number of elements".
-- Big O: `O(N * 2^N)` with `O(N)` recursion depth.
+- Big O: the power set has `2^N` subsets, and copying each finished subset can
+  cost up to `O(N)`. Recursion depth is `O(N)` because the decision path can
+  include every element once.
 
 ## `word_search`
 
@@ -133,7 +150,10 @@ Searches a board for a path spelling a word.
 - Key interview point: restore the board state after the recursive calls.
 - Interview pattern: grid DFS with visited restoration.
 - Fast recognition cue: "move up/down/left/right and cannot reuse the same cell".
-- Big O: `O(R * C * 4^L)` worst case; recursion depth `O(L)`.
+- Big O: you may try starting DFS from many cells, and from each step the word
+  search can branch in up to four directions before dead ends are ruled out.
+  Recursion depth is `O(L)` because the active path cannot exceed the word
+  length.
 
 ## `edge_cases`
 

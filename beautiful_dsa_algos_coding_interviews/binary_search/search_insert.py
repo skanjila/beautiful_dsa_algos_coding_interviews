@@ -10,8 +10,9 @@ def search_insert(nums: List[int], target: int) -> int:
     value is not smaller than ``target``. If every value is smaller, ``left``
     naturally ends at ``len(nums)``, which is the correct append position.
 
-    Time complexity: O(log N)
-    Space complexity: O(1)
+    Time complexity: O(log N) because each midpoint comparison discards half of
+    the remaining search interval.
+    Space complexity: O(1) because the search only keeps a few index variables.
     """
 
     left, right = 0, len(nums) - 1

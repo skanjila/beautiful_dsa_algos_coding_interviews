@@ -19,8 +19,11 @@ This is a classic prefix/suffix accumulation problem.
 
 ### Big O
 
-- time: `O(N)`
-- auxiliary space: `O(1)` excluding output
+- time: `O(N)` because the algorithm makes one forward pass to write left
+  products and one backward pass to multiply in right products, so each index is
+  touched a constant number of times.
+- auxiliary space: `O(1)` excluding output because the running prefix and
+  suffix products are held in scalar variables rather than separate arrays.
 
 ## `edge_cases`
 

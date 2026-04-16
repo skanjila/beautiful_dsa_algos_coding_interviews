@@ -15,9 +15,11 @@ def ladder_length(beginWord: str, endWord: str, wordList: List[str]) -> int:
       beginWord = "hit", endWord = "cog",
       wordList = ["hot","dot","dog","lot","log","cog"] -> 5 ("hit"→"hot"→"dot"→"dog"→"cog")
 
-    Time complexity: O(M^2 * N) in the common analysis, where N is the number
-    of words and M is the word length.
-    Space complexity: O(N) for the queue and visited set.
+    Time complexity: O(M^2 * N) in the common analysis because for each word
+    you may try M character positions, and constructing each candidate string
+    costs O(M). Repeating that across up to N discovered words gives M^2 * N.
+    Space complexity: O(N) because the dictionary set, visited set, and BFS
+    queue can all grow with the number of words.
     """
     word_set = set(wordList)
     if endWord not in word_set:

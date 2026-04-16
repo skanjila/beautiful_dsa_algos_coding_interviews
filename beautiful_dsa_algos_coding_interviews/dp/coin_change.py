@@ -8,8 +8,10 @@ def coin_change(coins: List[int], amount: int) -> int:
     This is a classic bottom-up dynamic programming problem where
     ``dp[x]`` stores the minimum number of coins required to form value ``x``.
 
-    Time complexity: O(amount * len(coins))
-    Space complexity: O(amount)
+    Time complexity: O(amount * len(coins)) because each amount from 1 through
+    the target tries every coin denomination once.
+    Space complexity: O(amount) because the DP array stores one best answer per
+    intermediate amount.
     """
 
     if amount == 0:

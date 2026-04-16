@@ -21,7 +21,9 @@ Finds the minimum number of coins needed to make a target amount.
 - State: `dp[x]` is the fewest coins needed for amount `x`.
 - Transition: try every coin and take `min(dp[x - coin] + 1)`.
 - Pattern to use quickly: unbounded knapsack / minimum-cost DP.
-- Big O: `O(amount * len(coins))` time, `O(amount)` space.
+- Big O: `O(amount * len(coins))` time because for every target amount from
+  `1` to `amount`, the code tries every coin once. Space is `O(amount)` because
+  the DP table stores one best answer for each intermediate amount.
 
 ## `word_break`
 
@@ -31,4 +33,7 @@ Checks whether a string can be segmented into dictionary words.
 - Transition: if some earlier prefix is valid and the substring from that
   prefix to `i` is a dictionary word, then `dp[i] = True`.
 - Pattern to use quickly: prefix segmentation DP.
-- Big O: `O(N^2)` time in the common analysis, `O(N)` space.
+- Big O: `O(N^2)` time in the common analysis because each starting index may
+  scan forward across many possible ending indices when checking substrings.
+  Space is `O(N)` because the boolean DP array stores one reachable-state flag
+  per string index.

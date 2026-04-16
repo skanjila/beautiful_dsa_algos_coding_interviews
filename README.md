@@ -5,7 +5,7 @@ This repo is an interview-prep workspace that combines:
 - executable data structures and algorithms implementations
 - tests for the implementations
 - deep-dive markdown guides for major DSA pattern families
-- study modules for system design, data engineering, and data science
+- study modules for system design, data engineering, data science, and machine learning engineering
 
 It is designed to be used as a study repo first and a Python codebase second.
 
@@ -60,10 +60,15 @@ These are structured interview-prep directories at the repo root:
 - [system_design](/Users/skanjilal/employment/code/beautiful_dsa_algos_coding_interviews/system_design)
 - [data_engineering](/Users/skanjilal/employment/code/beautiful_dsa_algos_coding_interviews/data_engineering)
 - [data_science](/Users/skanjilal/employment/code/beautiful_dsa_algos_coding_interviews/data_science)
+- [machine_learning_engineering](/Users/skanjilal/employment/code/beautiful_dsa_algos_coding_interviews/machine_learning_engineering)
 
 ### General docs
 
 - [docs](/Users/skanjilal/employment/code/beautiful_dsa_algos_coding_interviews/docs)
+- [docs/section_index.md](/Users/skanjilal/employment/code/beautiful_dsa_algos_coding_interviews/docs/section_index.md)
+- [docs/study_guide_roadmap.md](/Users/skanjilal/employment/code/beautiful_dsa_algos_coding_interviews/docs/study_guide_roadmap.md)
+- [docs/how_to_read_big_o.md](/Users/skanjilal/employment/code/beautiful_dsa_algos_coding_interviews/docs/how_to_read_big_o.md)
+- [docs/how_to_use_this_repo_effectively.md](/Users/skanjilal/employment/code/beautiful_dsa_algos_coding_interviews/docs/how_to_use_this_repo_effectively.md)
 
 ## How To Run The Tests
 
@@ -143,6 +148,19 @@ Use the repo in layers:
 That combination is the main value of the repo: it is not just code and it is
 not just notes.
 
+If you want a full end-to-end order for the whole repo, use:
+
+- [docs/study_guide_roadmap.md](/Users/skanjilal/employment/code/beautiful_dsa_algos_coding_interviews/docs/study_guide_roadmap.md)
+
+If you want the high-level map of the repo and its intentional variants, use:
+
+- [docs/section_index.md](/Users/skanjilal/employment/code/beautiful_dsa_algos_coding_interviews/docs/section_index.md)
+
+If you want a practical guide for daily use, staying consistent, and avoiding
+burnout, use:
+
+- [docs/how_to_use_this_repo_effectively.md](/Users/skanjilal/employment/code/beautiful_dsa_algos_coding_interviews/docs/how_to_use_this_repo_effectively.md)
+
 ### For system design prep
 
 Start with:
@@ -163,6 +181,14 @@ Start with:
 
 - [data_science/README.md](/Users/skanjilal/employment/code/beautiful_dsa_algos_coding_interviews/data_science/README.md)
 - [data_science/interview_walkthrough.md](/Users/skanjilal/employment/code/beautiful_dsa_algos_coding_interviews/data_science/interview_walkthrough.md)
+
+### For machine learning engineering prep
+
+Start with:
+
+- [machine_learning_engineering/README.md](/Users/skanjilal/employment/code/beautiful_dsa_algos_coding_interviews/machine_learning_engineering/README.md)
+- [machine_learning_engineering/interview_walkthrough.md](/Users/skanjilal/employment/code/beautiful_dsa_algos_coding_interviews/machine_learning_engineering/interview_walkthrough.md)
+- [machine_learning_engineering/PRACTICE_PROBLEMS.md](/Users/skanjilal/employment/code/beautiful_dsa_algos_coding_interviews/machine_learning_engineering/PRACTICE_PROBLEMS.md)
 
 ## What Makes This Repo Different
 

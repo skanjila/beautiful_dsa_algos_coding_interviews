@@ -5,8 +5,10 @@ def three_sum(nums: List[int]) -> List[List[int]]:
     Finds all unique triplets in the array which give the sum of zero.
 
     Pattern: Sorting + Two Pointers
-    Time Complexity: O(n^2)
-    Space Complexity: O(1) (excluding output list)
+    Time Complexity: O(n^2) because after sorting, each choice of the first
+    value gets one linear two-pointer sweep across the remaining suffix.
+    Space Complexity: O(1) auxiliary because the search reuses the sorted array
+    and only moves pointers, excluding the output list.
     """
     nums.sort()  # Sort for duplicate handling and two-pointer movement
     n = len(nums)

@@ -8,8 +8,10 @@ def word_break(s: str, word_dict: List[str]) -> bool:
     ``dp[i]`` means the prefix ``s[:i]`` is segmentable. Each true position
     tries to extend forward using dictionary matches.
 
-    Time complexity: O(N^2) in the common analysis
-    Space complexity: O(N)
+    Time complexity: O(N^2) in the common analysis because each start index can
+    scan forward across many possible end indices while checking substrings.
+    Space complexity: O(N) because the DP array keeps one reachable flag per
+    string position.
     """
 
     words: Set[str] = set(word_dict)
