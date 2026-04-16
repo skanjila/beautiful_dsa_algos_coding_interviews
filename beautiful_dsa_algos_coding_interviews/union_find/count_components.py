@@ -7,8 +7,11 @@ def count_components(n: int, edges: List[List[int]]) -> int:
     """
     Count connected components in an undirected graph using union-find.
 
-    Time complexity: O((N + E) * alpha(N))
-    Space complexity: O(N)
+    Time complexity: O((N + E) * alpha(N)) because initialization touches N
+    nodes once and each edge performs a small constant number of amortized
+    find/union operations.
+    Space complexity: O(N) because the parent and rank/size arrays store one
+    entry per node.
     """
 
     uf = UnionFind(n)

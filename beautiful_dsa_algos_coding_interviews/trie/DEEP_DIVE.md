@@ -30,7 +30,10 @@ Pattern to use quickly:
 
 Big O:
 
-- insert: `O(L)`
-- search: `O(L)`
-- starts_with: `O(L)`
+- insert: `O(L)` because inserting a word follows or creates one trie edge per
+  character in that word.
+- search: `O(L)` because lookup walks one edge per character until a mismatch or
+  the word ends.
+- starts_with: `O(L)` for the same reason as search: it only needs to traverse
+  the prefix characters.
 - space: proportional to total stored characters

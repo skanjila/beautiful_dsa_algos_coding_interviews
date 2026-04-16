@@ -19,7 +19,9 @@ Groups matrix values by `row + column`.
 
 - Every cell with the same `r + c` belongs to the same anti-diagonal.
 - Pattern to use quickly: coordinate-grouping by invariant.
-- Big O: `O(R * C)` time, `O(R * C)` space for the grouped output.
+- Big O: `O(R * C)` time because every matrix cell is visited once and appended
+  to exactly one anti-diagonal bucket. Space is `O(R * C)` because the grouped
+  output stores every cell value again.
 
 ## `matrix_rotation`
 
@@ -28,7 +30,10 @@ Rotates an `N x N` matrix 90 degrees clockwise in place.
 - Phase 1: transpose across the main diagonal.
 - Phase 2: reverse each row.
 - Pattern to use quickly: decompose one complex transform into two simpler transforms.
-- Big O: `O(N^2)` time, `O(1)` auxiliary space.
+- Big O: `O(N^2)` time because transpose touches each matrix position and the
+  row reversals together also cover the matrix linearly, which is still bounded
+  by a constant number of full `N x N` passes. Space is `O(1)` auxiliary
+  because the rotation happens in place.
 
 ## `edge_cases`
 

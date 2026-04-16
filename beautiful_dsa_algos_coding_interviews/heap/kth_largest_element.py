@@ -6,8 +6,10 @@ def kth_largest(nums: List[int], k: int) -> int:
     """
     Return the kth largest element using a size-k min-heap.
 
-    Time complexity: O(N log K)
-    Space complexity: O(K)
+    Time complexity: O(N log K) because all N values are seen once and each
+    heap push/pop is logarithmic in the bounded heap size K.
+    Space complexity: O(K) because the heap stores only the current top-K
+    candidates.
     """
 
     heap: List[int] = []

@@ -40,10 +40,38 @@ has already appeared. A hash map answers that lookup in expected `O(1)` time.
 
 ### Big O
 
-- time: `O(N)`
-- space: `O(N)`
+- time: `O(N)` because each number is processed once, and each hash-map lookup
+  for the needed complement is expected constant time.
+- space: `O(N)` because in the worst case you store every previously seen value
+  in the map before finding the answer.
 
 ## `edge_cases`
 
 The wrapper makes `None` inputs and arrays shorter than two elements explicit.
 For valid inputs it preserves the same `O(N)` behavior as the main function.
+
+## `contains_duplicate`
+
+Checks whether any value repeats.
+
+- Insert values into a set as you scan.
+- The first repeat ends the search.
+- Interview approach: one of the cleanest "seen set" problems in interviews.
+- Big O: `O(N)` time and `O(N)` space in the worst case.
+
+## `valid_anagram`
+
+Checks whether two strings contain the same character counts.
+
+- Count one string and cancel with the other.
+- Interview approach: when order does not matter but multiplicity does, think
+  frequency map immediately.
+- Big O: `O(N)` time, `O(U)` space for distinct characters.
+
+## `group_anagrams`
+
+Buckets words by a canonical anagram signature.
+
+- Sort each word or build a frequency signature.
+- Interview approach: normalize each word into a key, then group by that key.
+- Big O: `O(N * K log K)` with sorted-string signatures.

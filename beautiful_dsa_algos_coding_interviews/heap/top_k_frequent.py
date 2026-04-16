@@ -7,8 +7,10 @@ def top_k_frequent(nums: List[int], k: int) -> List[int]:
     """
     Return the ``k`` most frequent values.
 
-    Time complexity: O(N log K)
-    Space complexity: O(N)
+    Time complexity: O(N log K) because counting is one linear pass and then
+    each distinct value may trigger a heap operation of cost log K.
+    Space complexity: O(N) because the frequency map can hold every distinct
+    value from the input.
     """
 
     counts = Counter(nums)

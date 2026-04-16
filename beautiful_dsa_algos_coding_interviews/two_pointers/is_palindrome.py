@@ -4,8 +4,10 @@ def is_palindrome(s: str) -> bool:
     @param s: input string
     @return: whether s is a palindrome.
 
-    Time complexity: O(N)
-    Space complexity: O(N) because the cleaned string is rebuilt.
+    Time complexity: O(N) because the string is scanned to build the cleaned
+    version and then scanned linearly again with two pointers.
+    Space complexity: O(N) because the cleaned alphanumeric-only string is
+    stored explicitly.
     """
     # first clean the string to remove characters that are not alpha numeric
     cleaned_s = ''.join(char.lower() for char in s if s if char.isalnum())

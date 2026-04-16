@@ -23,7 +23,9 @@ Uses a size-`k` min-heap.
 
 - Keep only the `k` largest values seen so far.
 - The root is the kth largest among them.
-- Big O: `O(N log K)` time, `O(K)` space.
+- Big O: `O(N log K)` time because you examine all `N` numbers and each heap
+  push or pop costs `log K` when the heap never grows beyond size `k`. Space is
+  `O(K)` because the heap stores only the current top `k` candidates.
 
 ## `top_k_frequent`
 
@@ -31,4 +33,7 @@ Uses a frequency map and a size-`k` min-heap over `(frequency, value)` pairs.
 
 - Count frequencies first.
 - Keep only the `k` most frequent entries.
-- Big O: `O(N log K)` time, `O(N)` space.
+- Big O: `O(N log K)` time because counting frequencies is one linear pass, and
+  then each distinct value may trigger a heap operation that costs `log K`.
+  Space is `O(N)` in the worst case because the frequency map can hold every
+  distinct input value.
