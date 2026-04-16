@@ -6,6 +6,10 @@ things:
 - a large interview-style Q&A bank you can drill repeatedly
 - a structured Python representation that the test suite validates
 
+It also now includes small runnable reference implementations under
+[implementations](implementations/) for concepts that come up repeatedly in
+interviews, such as rate limiting and Kafka-style event buses.
+
 If you want the raw structured source, see [question_bank.py](question_bank.py).
 
 ## How To Study
