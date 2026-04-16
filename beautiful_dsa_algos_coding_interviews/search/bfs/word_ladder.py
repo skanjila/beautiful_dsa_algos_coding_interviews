@@ -14,6 +14,10 @@ def ladder_length(beginWord: str, endWord: str, wordList: List[str]) -> int:
     Example:
       beginWord = "hit", endWord = "cog",
       wordList = ["hot","dot","dog","lot","log","cog"] -> 5 ("hit"→"hot"→"dot"→"dog"→"cog")
+
+    Time complexity: O(M^2 * N) in the common analysis, where N is the number
+    of words and M is the word length.
+    Space complexity: O(N) for the queue and visited set.
     """
     word_set = set(wordList)
     if endWord not in word_set:

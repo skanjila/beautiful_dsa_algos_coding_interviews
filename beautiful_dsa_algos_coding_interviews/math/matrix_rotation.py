@@ -6,6 +6,9 @@ def rotate_image(matrix: List[List[int]]) -> None:
     - Returns None (in-place)
     - Raises ValueError for non-square or ragged inputs
     - Treats [] as a no-op (returns None)
+
+    Time complexity: O(N^2)
+    Space complexity: O(1) auxiliary space because the rotation is in place.
     """
     # Empty matrix: allow as no-op (adjust if your spec requires raising)
     if matrix == []:

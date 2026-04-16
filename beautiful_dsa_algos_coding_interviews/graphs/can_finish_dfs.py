@@ -14,6 +14,9 @@ def can_finish_dfs(numCourses: int, prerequisites: List[List[int]]) -> bool:
     Returns:
         True if you can finish all courses (no cycles in dependency graph),
         False if there’s a cycle (some courses depend on each other).
+
+    Time complexity: O(V + E)
+    Space complexity: O(V + E) including recursion stack and adjacency list.
     """
 
     # Build adjacency list representation of the graph:
@@ -30,6 +33,9 @@ def can_finish_dfs(numCourses: int, prerequisites: List[List[int]]) -> bool:
         """
         Perform DFS to check for cycles starting from 'course'.
         Returns True if this path has no cycles, False otherwise.
+
+        Time complexity: O(out_degree(course)) amortized over the full traversal.
+        Space complexity: O(recursion depth) for the active path.
         """
 
         # Base case: if there are no prerequisites left for this course,

@@ -14,6 +14,9 @@ def longest_ones(nums: List[int], k: int = 0) -> int:
 
     Returns:
         int: The length of the longest contiguous sequence of 1s.
+
+    Time complexity: O(N) because the sliding window endpoints only move forward.
+    Space complexity: O(1)
     """
     left = 0
     max_len = 0

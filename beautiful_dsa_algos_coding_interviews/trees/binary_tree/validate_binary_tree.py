@@ -2,6 +2,12 @@ import math
 from typing import Optional
 
 class TreeNode:
+    """Binary-tree node used by the BST validation helper.
+
+    Time complexity: O(1) to construct.
+    Space complexity: O(1) per node, excluding subtrees.
+    """
+
     def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
@@ -20,9 +26,17 @@ def is_valid_bst(root: Optional[TreeNode]) -> bool:
             - Each node's value must lie strictly between a lower (min) and upper (max) bound.
             - As we go left, the upper bound becomes the current node’s value.
             - As we go right, the lower bound becomes the current node’s value.
+
+    Time complexity: O(N)
+    Space complexity: O(H)
     """
 
     def dfs(node: Optional[TreeNode], min_val: float, max_val: float) -> bool:
+        """Validate one subtree against an allowed numeric range.
+
+        Time complexity: O(size of subtree)
+        Space complexity: O(H) recursion depth.
+        """
         # Base case: empty subtree is always valid
         if node is None:
             return True

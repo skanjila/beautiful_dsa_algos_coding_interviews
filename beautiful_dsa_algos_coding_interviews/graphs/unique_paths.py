@@ -10,6 +10,9 @@ def unique_paths_with_obstacles(obstacleGrid: List[List[int]]) -> int:
     You can only move either right or down at any point in time.
 
     This version uses DFS (Depth-First Search) with memoization (top-down DP).
+
+    Time complexity: O(R * C) because each cell is solved once.
+    Space complexity: O(R * C) for the memo plus recursion stack in the worst case.
     """
 
     # --- Step 1: Handle invalid input cases ---
@@ -36,6 +39,9 @@ def unique_paths_with_obstacles(obstacleGrid: List[List[int]]) -> int:
         """
         Explore all paths starting from (row, column)
         and return the total number of valid paths to reach the goal.
+
+        Time complexity: O(1) amortized per memoized state.
+        Space complexity: O(R + C) recursion depth along one path.
         """
 
         # --- Base Case 1: Out of bounds ---

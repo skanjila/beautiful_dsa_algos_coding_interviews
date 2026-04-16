@@ -2,7 +2,12 @@ from typing import List
 
 
 def subsets_fixed(nums: List[int]) -> List[List[int]]:
-    """Return all unique subsets of nums (the power set)."""
+    """Return all unique subsets of nums (the power set).
+
+    Time complexity: O(N * 2^N) because there are up to 2^N subsets and each
+    copied subset can cost O(N).
+    Space complexity: O(N) recursion depth, excluding output.
+    """
     nums.sort()  # handle duplicates deterministically
     result: List[List[int]] = []
 
@@ -20,5 +25,9 @@ def subsets_fixed(nums: List[int]) -> List[List[int]]:
     return result
 
 def canon(lst):
-    """Helper to normalize subset results (ignore ordering)."""
+    """Helper to normalize subset results (ignore ordering).
+
+    Time complexity: O(K log K) over the normalized subset tuples.
+    Space complexity: O(K) for the transformed collection.
+    """
     return sorted([tuple(sorted(x)) for x in lst])

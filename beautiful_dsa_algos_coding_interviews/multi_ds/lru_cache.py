@@ -5,6 +5,9 @@ class LRUCache:
     """
     LRU cache: O(1) amortized get/put using dict + doubly linked list.
     Uses TreeNode as a generic node and adds `.key`, `.val`, `.prev`, `.next`.
+
+    Space complexity: O(capacity) because the cache stores at most ``capacity``
+    nodes and a matching dictionary entry for each.
     """
 
     def __init__(self, capacity: int):
@@ -21,14 +24,22 @@ class LRUCache:
         self.tail.next = None
 
     def _add_to_front(self, node: TreeNode) -> None:
-        """Insert node right after head (make it MRU)."""
+        """Insert node right after head (make it MRU).
+
+        Time complexity: O(1)
+        Space complexity: O(1)
+        """
         node.prev = self.head
         node.next = self.head.next
         self.head.next.prev = node
         self.head.next = node
 
     def _remove_node(self, node: TreeNode) -> None:
-        """Unlink node from the list."""
+        """Unlink node from the list.
+
+        Time complexity: O(1)
+        Space complexity: O(1)
+        """
         prev, nxt = node.prev, node.next
         # Guard in case someone calls on a detached node
         if prev is not None:
@@ -39,11 +50,20 @@ class LRUCache:
         node.next = None
 
     def _move_to_front(self, node: TreeNode) -> None:
-        """Make an existing node MRU."""
+        """Make an existing node MRU.
+
+        Time complexity: O(1)
+        Space complexity: O(1)
+        """
         self._remove_node(node)
         self._add_to_front(node)
 
     def _evict_if_needed(self) -> None:
+        """Evict the least recently used node if capacity is exceeded.
+
+        Time complexity: O(1)
+        Space complexity: O(1)
+        """
         if len(self.cache) > self.capacity:
             # LRU node is right before tail
             lru = self.tail.prev
@@ -58,6 +78,9 @@ class LRUCache:
         Return value if present; -1 otherwise.
         On hit: mark as most-recently used.
         On miss: DO NOT insert or evict.
+
+        Time complexity: O(1) amortized
+        Space complexity: O(1)
         """
         node = self.cache.get(key)
         if node is None:
@@ -70,6 +93,9 @@ class LRUCache:
         Insert/update key with value.
         On update: write value and move to front.
         On insert: create node, insert at front, evict LRU if over capacity.
+
+        Time complexity: O(1) amortized
+        Space complexity: O(1) auxiliary
         """
         node = self.cache.get(key)
         if node is not None:

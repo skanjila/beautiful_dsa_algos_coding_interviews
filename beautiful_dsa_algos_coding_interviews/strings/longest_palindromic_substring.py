@@ -67,6 +67,11 @@ def longest_palindrome(s: str) -> str:
     return s[best_start:best_end + 1]
 
 def is_palindrome(s: str) -> bool:
+    """Return whether ``s`` reads the same forward and backward.
+
+    Time complexity: O(N)
+    Space complexity: O(N) because slicing creates a reversed copy.
+    """
     return s == s[::-1]
 
 
@@ -74,6 +79,10 @@ def brute_force_longest_pal_len(s: str) -> int:
     """
     Quadratic reference to verify that the returned palindrome
     is not only valid but also maximal length.
+
+    Time complexity: O(N^3) because all substrings are checked and each
+    palindrome test can be linear.
+    Space complexity: O(N) from temporary substring copies.
     """
     n = len(s)
     best = 0

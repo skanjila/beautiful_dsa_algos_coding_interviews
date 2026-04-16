@@ -12,6 +12,9 @@ def get_antidiagonals(matrix):
     Returns:
         A list of lists, where each inner list represents an antidiagonal.
         Returns an empty list if the input matrix is empty.
+
+    Time complexity: O(R * C)
+    Space complexity: O(R * C) for the grouped output.
     """
     if not matrix or not matrix[0]:
         return []
